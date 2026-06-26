@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  background: #070708;
+  color: #f7f7f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.06), transparent 24rem),
+    linear-gradient(180deg, #070708 0%, #050506 100%);
+  color: #f7f7f2;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+button,
+textarea,
+input {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.hairline {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.grid-field {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black 0%, black 46%, transparent 100%);
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes breathe-line {
+  0%,
+  100% {
+    opacity: 0.22;
+  }
+  50% {
+    opacity: 0.72;
+  }
+}
+
+@keyframes lunar-breathe {
+  0%,
+  100% {
+    opacity: 0.74;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.08));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.2));
+  }
+}
+
+.spin-slow {
+  animation: spin-slow 32s linear infinite;
+  transform-origin: center;
+}
+
+.spin-slower {
+  animation: spin-slow 54s linear infinite reverse;
+  transform-origin: center;
+}
+
+.breathe-line {
+  animation: breathe-line 3.4s ease-in-out infinite;
+}
+
+.lunar-breathe {
+  animation: lunar-breathe 4.8s ease-in-out infinite;
+  transform-origin: center;
+}
